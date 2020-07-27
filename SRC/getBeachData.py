@@ -3,9 +3,14 @@ import requests
 from datetime import datetime
 import pprint
 import pandas as pd
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+key = os.getenv("KEY")
 
 def getSwellHeight(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -26,7 +31,7 @@ def getSwellHeight(latlong):
 
 
 def getWindDir(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -47,7 +52,7 @@ def getWindDir(latlong):
 
 
 def getSwellDir(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -68,7 +73,7 @@ def getSwellDir(latlong):
 
 
 def getWindSpeed(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -89,7 +94,7 @@ def getWindSpeed(latlong):
 
 
 def getSwellPeriod(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -110,7 +115,7 @@ def getSwellPeriod(latlong):
 
 
 def getWaterTemp(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)
@@ -131,7 +136,7 @@ def getWaterTemp(latlong):
 
 
 def getWeatherDescription(latlong):
-    key = "4bf49534c534477aa8a80201202707"
+    key = os.getenv("KEY")
     url = f"http://api.worldweatheronline.com/premium/v1/marine.ashx?key={key}&format=json&q={latlong}"
 
     res = requests.get(url)

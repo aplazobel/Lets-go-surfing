@@ -20,3 +20,4 @@ df['Water temperature'] = df['latlong'].apply(getWaterTemp)
 df['Weather Description'] = df['latlong'].apply(getWeatherDescription)
 
 print(df.head())
+df.to_csv('../OUTPUT/beaches.csv')

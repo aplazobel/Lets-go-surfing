@@ -1,15 +1,20 @@
 import json
 import requests
 import pandas as pd
-#import os get ...
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+email = os.getenv("EMAIL")
+token = os.getenv("TOKEN_SURFCHECK")
 
 def getMoreBeaches(lat, longt):
     url = f"https://surfvideos.xyz/locations.json?latitude={lat}&longitude={longt}&distance=50"
 
     payload = {}
     headers = {
-    'X-User-Email': 'ap1468@georgetown.edu',
-    'X-User-Token': 'edJsbzQC2YbM2bYFPWYm',
+    'X-User-Email': email,
+    'X-User-Token': token,
     'Accept': '{{Accept}}',
     'Content-Type': '{{Content}}'
     }
