@@ -9,5 +9,8 @@ def geocode(location):
     }
 
 def getCoords(location):
-    my_coordinates = geocode(location)
-    return my_coordinates["coordinates"]
+    try:
+        my_coordinates = geocode(location)
+        return my_coordinates["coordinates"]
+    except:
+        return -4.29151, 43.3856
