@@ -28,6 +28,8 @@ def getMoreBeaches(lat, longt):
         data[i]["data"]["attributes"]["address"], 
         data[i]["data"]["attributes"]["direction"], 
         data[i]["data"]["attributes"]["experience"], 
+        data[i]["data"]["attributes"]["wave_quality"], 
+        data[i]["data"]["attributes"]["frequency"], 
         data[i]["data"]["attributes"]["bottom"], 
         data[i]["data"]["attributes"]["best_wind_direction"], 
         data[i]["data"]["attributes"]["best_swell_direction"],
@@ -35,18 +37,15 @@ def getMoreBeaches(lat, longt):
         data[i]["data"]["attributes"]["longitude"]
 ] for i in range(len(data)))
     
-    df = df.rename(columns={0: 'Name', 1: 'Address', 2: 'Direction', 3: 'Experience',4: 'Bottom', 5: 'Best wind', 6: 'Best swell', 7: "Latitude", 8:"Longitude"})
+    df = df.rename(columns={0: 'Name', 1: 'Address', 2: 'Direction', 3: 'Experience', 4: "Wave quality", 5: "Frequency", 6: 'Bottom', 7: 'Best wind', 8: 'Best swell', 9: "Latitude", 10:"Longitude"})
     df["latlong"] = None
   
     for i in range(df.shape[0]):
         df["latlong"][i] = f"{df['Latitude'][i]},{df['Longitude'][i]}"    
-        
-    df = df.drop(columns=['Latitude', 'Longitude'])
-        
+    
     return df
 
-    
 
-df = getMoreBeaches("43.479472","-3.80868")
+
 
 

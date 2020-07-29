@@ -2,17 +2,22 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from controllers.getUserCoordinates import getCoords
-from controllers.getClosestBeach import getMoreBeaches
+from controllers.getClosestBeach import getMoreBeaches 
 from controllers.getBeachData import getSwellDir,getSwellHeight,getSwellPeriod,getWindSpeed,getWindDir,getWaterTemp,getWeatherDescription
+from controllers.extractBestBeach import bestBeach
 
-st.title("Let's go surfing")
+"""st.title("Let's go surfing")
 my_slot1 = st.empty()
 
 user_input = st.text_input("Input your current location, if possible enter your exact address:")
 experience = st.selectbox(
     "What's your experience? Choose from the dropdown menu",
     ('Beginner', 'Experienced', 'Advanced/Pro')
-)
+)"""
+
+user_input = input("Input your current location, if possible enter your exact address:")
+experience = input("Input your experience: ")
+
 
 latlong = getCoords(user_input)
 longitude = latlong[0]
@@ -27,9 +32,11 @@ df['Wind direction'] = df['latlong'].apply(getWindDir)
 df['Water temperature'] = df['latlong'].apply(getWaterTemp) 
 df['Weather Description'] = df['latlong'].apply(getWeatherDescription)
 
-df.to_csv('../OUTPUT/beaches.csv')
-print(df.head())
+print(df)
+#print(bestBeach(df, experience))
 
+"""
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(df)
+"""
