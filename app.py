@@ -3,14 +3,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from getUserCoordinates import getCoords
-from getClosestBeach import getMoreBeaches 
-from getBeachData import getSwellDir,getSwellHeight,getSwellPeriod,getWindSpeed,getWindDir,getWaterTemp,getWeatherDescription
+from SRC.getUserCoordinates import getCoords
+from SRC.getClosestBeach import getMoreBeaches 
+from SRC.getBeachData import getSwellDir,getSwellHeight,getSwellPeriod,getWindSpeed,getWindDir,getWaterTemp,getWeatherDescription
 from PIL import Image
-from sendEmail import enviaMail
+from SRC.sendEmail import enviaMail
 import pydeck as pdk
-from pdf_generator import pdfMaker
-from directionsAPI import getDirections
+from SRC.pdf_generator import pdfMaker
+from SRC.directionsAPI import getDirections
 
 # Adding a title to the streamlit API
 st.title("Let's go surfing")
