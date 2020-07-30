@@ -1,9 +1,9 @@
 <img src="INPUT/thereadmeboyz.png"> 
 
             
-            An API to find the perfect wave
-
-        By Umberto Sajonia Coburgo and Alfredo Pla
+                    An API to find the perfect wave
+   
+                 By Umberto Sajonia Coburgo and Alfredo Pla
 
 ## How it works
 We have created an API that requires three inputs to function:
