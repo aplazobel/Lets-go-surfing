@@ -49,10 +49,10 @@ if len(user_input) > 1:
             if longe == 0.0 and late == 0.0:
                 raise ValueError("Your address wasn't specific enough, please reload the page and try again.") 
             
-            try:
-                df = getMoreBeaches(late,longe, experience)
-            except:
-                raise ValueError("Your address wasn't specific enough, please reload the page and try again.")
+            #try:
+            df = getMoreBeaches(late,longe, experience)
+            #except:
+            #    raise ValueError("Your address wasn't specific enough, please reload the page and try again.")
             df['Swell Height'] = df['latlong'].apply(getSwellHeight)
             df['Swell direction'] = df['latlong'].apply(getSwellDir)
             df['Swell period'] = df['latlong'].apply(getSwellPeriod)
