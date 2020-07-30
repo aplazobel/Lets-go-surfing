@@ -2,7 +2,7 @@ import pandas as pd
 from fpdf import FPDF
 
 def pdfMaker():
-    df = pd.read_csv("../OUTPUT/beaches.csv")
+    df = pd.read_csv("OUTPUT/beaches.csv")
     print(df.head())
     x = 0
     beach_name = df.iloc[x]["Name"]
@@ -21,7 +21,7 @@ def pdfMaker():
     pdf.add_page()
 
     #Titulo de PDF
-    pdf.image("../INPUT/theboyz.JPG", x = 30, y = 10, w = 150, h = 100, type = '', link = '')
+    pdf.image("INPUT/theboyz.JPG", x = 30, y = 10, w = 150, h = 100, type = '', link = '')
 
     #Nombre de Report y nombre de Playa
     pdf.set_xy(10,105)
@@ -42,33 +42,33 @@ def pdfMaker():
         pdf.cell(w=208, h = 20 , txt = f" Direction: {direction}     Water Temp Cº: {water_temp}     Seabed: {bottom} ", border = 0, ln = 0, align = 'C', fill = False)
     # Para los iconos de la dirección de la ola 
     if direction == "Left":
-        pdf.image("../INPUT/left.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
+        pdf.image("INPUT/left.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
     elif direction == "Right":
-        pdf.image("../INPUT/right.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
+        pdf.image("INPUT/right.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
     elif direction == "Right and left":
-        pdf.image("../INPUT/right_and_left.png", x = 14, y = 160, w = 60, h = 30, type = '', link = '')
+        pdf.image("INPUT/right_and_left.png", x = 14, y = 160, w = 60, h = 30, type = '', link = '')
     else:
-        pdf.image("../INPUT/nan.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
+        pdf.image("INPUT/nan.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
 
     # Para el icono del termometro de la temperatura del agua
     if water_temp < 15:
-        pdf.image("../INPUT/cold.jpg", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
+        pdf.image("INPUT/cold.jpg", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
     elif 15 <= water_temp <= 22:
-        pdf.image("../INPUT/warm.png", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
+        pdf.image("INPUT/warm.png", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
     elif water_temp > 22:
-        pdf.image("../INPUT/hot.png", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
+        pdf.image("INPUT/hot.png", x = 100, y = 160, w = 13, h = 25, type = '', link = '')
 
     # Para el suelo maritimo
     if bottom == "Reef-coral":
-        pdf.image("../INPUT/reef_coral.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
+        pdf.image("INPUT/reef_coral.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
     elif bottom == "Reef-rocky":
-        pdf.image("../INPUT/reef_rocky.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
+        pdf.image("INPUT/reef_rocky.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
     elif bottom == "Beach-break" or bottom == "Sand-bar" or bottom == "Breakwater/jetty":
-        pdf.image("../INPUT/beach_break.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
+        pdf.image("INPUT/beach_break.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
     elif bottom == "Point-break":
-        pdf.image("../INPUT/point_break.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
+        pdf.image("INPUT/point_break.png", x = 160, y = 160, w = 20, h = 20, type = '', link = '')
     else:
-        pdf.image("../INPUT/nan.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
+        pdf.image("INPUT/nan.png", x = 25, y = 160, w = 30, h = 30, type = '', link = '')
 
     #Segunda Fila de info
     pdf.set_xy(1,190)
@@ -77,18 +77,18 @@ def pdfMaker():
 
     # Para el tiempo
     if "cloud" in weather:
-        pdf.image("../INPUT/partly_cloudy.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
+        pdf.image("INPUT/partly_cloudy.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
     elif "sun" in weather:
-        pdf.image("../INPUT/sunny.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
+        pdf.image("INPUT/sunny.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
     elif "rain" in weather:
-        pdf.image("../INPUT/rainy.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
+        pdf.image("INPUT/rainy.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
     elif "storm" in weather:
-        pdf.image("../INPUT/storm.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
+        pdf.image("INPUT/storm.jpg", x = 60, y = 210, w = 30, h = 20, type = '', link = '')
     else:
-        pdf.image("../INPUT/nan.png", x = 60, y = 210, w = 30, h = 30, type = '', link = '')
+        pdf.image("INPUT/nan.png", x = 60, y = 210, w = 30, h = 30, type = '', link = '')
 
     #Para el tamaño de las olas
-    pdf.image("../INPUT/swell.png", x = 130, y = 210, w = 30, h = 20, type = '', link = '')
+    pdf.image("INPUT/swell.png", x = 130, y = 210, w = 30, h = 20, type = '', link = '')
 
     #Para info adicional
     pdf.set_xy(1,250)
@@ -100,4 +100,4 @@ def pdfMaker():
     pdf.set_font("Courier", "", 12)
     pdf.multi_cell(w=200, h = 10 , txt = f" Address: {address} ", border = 0,  align = 'C', fill = False)
 
-    pdf.output("../OUTPUT/forecastPDF.pdf")
+    pdf.output("OUTPUT/forecastPDF.pdf")

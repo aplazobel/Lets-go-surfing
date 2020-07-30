@@ -63,7 +63,7 @@ if len(user_input) > 1:
 
             print(df)
             # Transforming to CSV. Then CSV is used to create a PDF that will be sent to user
-            df.to_csv('../OUTPUT/beaches.csv', index = False)
+            df.to_csv('OUTPUT/beaches.csv', index = False)
             pdfMaker()
 
             # Sending the email      

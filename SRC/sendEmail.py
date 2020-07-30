@@ -22,7 +22,7 @@ def enviaMail(receptor):
 
     # Sending the attached file
     nombre_adjunto = "Report"
-    archivo_adjunto = open("../OUTPUT/forecastPDF.pdf", 'rb')
+    archivo_adjunto = open("OUTPUT/forecastPDF.pdf", 'rb')
     # Creating a MIME object to later on add the attached file
     message.attach(MIMEText("Hi, please find attached the PDF report with the surf forecast. STAY RIDIN'!", 'plain'))
     adjunto_MIME = MIMEBase('application', 'octet-stream')
