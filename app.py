@@ -17,7 +17,7 @@ st.title("Let's go surfing")
 my_slot1 = st.empty()
 
 # Adding an image to the streamlit API
-image = Image.open('../INPUT/theboyz.JPG')
+image = Image.open('INPUT/theboyz.JPG')
 st.image(image, caption="Your developers surfing MAD waves! STAY RIDIN'",
               use_column_width=True)
 
