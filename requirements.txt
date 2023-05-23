@@ -1,5 +1,5 @@
 pydeck==0.4.0
-requests==2.24.0
+requests==2.31.0
 streamlit==0.64.0
 numpy==1.18.4
 fpdf==1.7.2
